@@ -1,0 +1,98 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+@import "tailwindcss";
+
+@theme {
+  /* The Architect Palette */
+  --color-bg-primary: #0A0C10;    /* Deep Space */
+  --color-bg-secondary: #161B22;  /* Obsidian */
+  --color-bg-tertiary: #1c2128;   /* Obsidian variant */
+  --color-bg-card: #161B22;       /* Obsidian */
+  --color-bg-card-hover: #1c2128;
+  --color-bg-sidebar: #0A0C10;
+  --color-bg-input: #0D1117;
+
+  --color-border-primary: rgba(139, 148, 158, 0.2); /* Steel Mist at low opacity */
+  --color-border-secondary: rgba(139, 148, 158, 0.3);
+  --color-border-accent: #C5A059; /* Titanium Gold */
+
+  --color-text-primary: #C9D1D9;
+  --color-text-secondary: #8B949E; /* Steel Mist */
+  --color-text-muted: #484F58;
+  --color-text-accent: #C5A059; /* Titanium Gold */
+
+  --color-accent-primary: #C5A059; /* Titanium Gold */
+  --color-accent-secondary: #8B949E; /* Steel Mist */
+
+  /* Refined Badge Palette for IT Professional look */
+  --color-badge-new: #C5A059;
+  --color-badge-reaffirmed: #34d399;
+  --color-badge-revised: #C5A059;
+  --color-badge-reversed: #fb7185;
+  --color-badge-contradiction: #f97316;
+  --color-badge-review: #a78bfa;
+  --color-badge-proposal: #8B949E;
+
+  --color-badge-blocker: #fb7185;
+  --color-badge-risk: #fbbf24;
+  --color-badge-open-question: #22d3ee;
+
+  --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+}
+
+/* Light mode is disabled or heavily modified to align with 'The Architect' dark-first precision look */
+/* Removing previous light mode overrides to maintain high-precision instrument aesthetic */
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  margin: 0;
+  background: var(--color-bg-primary);
+  color: var(--color-text-secondary); /* Set to Steel Mist as requested */
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-sans);
+  font-weight: 600;
+  color: var(--color-text-primary);
+  letter-spacing: -0.02em;
+}
+
+.font-mono {
+  font-family: var(--font-mono);
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-border-secondary);
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-text-muted);
+}
+
+/* Custom focus ring */
+*:focus-visible {
+  outline: 1px solid var(--color-accent-primary);
+  outline-offset: 2px;
+}
+
+/* Transitions - Shifted from aggressive slides to subtle fades */
+.transition-all-fast {
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
