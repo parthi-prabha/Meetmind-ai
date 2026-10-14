@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>MeetMind AI</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="top">
+  <div>
+    <h1>MeetMind</h1>
+    <p class="tagline">What was decided, what changed, and what is still stuck.</p>
+  </div>
+  <div id="modeBanner" class="mode" role="status"></div>
+</header>
+
+<main class="layout">
+  <section class="panel input" aria-labelledby="h-meeting">
+    <h2 id="h-meeting">Meeting</h2>
+
+    <div class="samples">
+      <span class="muted">Try a sample:</span>
+      <span id="sampleButtons"></span>
+    </div>
+
+    <label>Title
+      <input id="title" type="text" placeholder="Weekly product sync">
+    </label>
+    <label>Date
+      <input id="date" type="date">
+    </label>
+    <label>Transcript
+      <textarea id="transcript" rows="12" placeholder="[00:01:05] Alice: We will launch on Friday.&#10;[00:01:40] Bob: I'll draft the announcement by Wednesday."></textarea>
+    </label>
+    <label class="file">Or upload a .txt file
+      <input id="file" type="file" accept=".txt,.md,.vtt,.srt,text/plain">
+    </label>
+
+    <button id="analyze" class="primary">Analyze Meeting</button>
+    <div id="formError" class="error" role="alert" hidden></div>
+
+    <h3>Agent status</h3>
+    <ol id="steps" class="steps" aria-live="polite"></ol>
+
+    <div class="row">
+      <button id="runAll">Run all 3 samples</button>
+      <button id="reset" class="quiet">Reset data</button>
+    </div>
+
+    <h3>Ask across meetings</h3>
+    <label>Question
+      <input id="askInput" type="text" placeholder="What was decided about the launch date?">
+    </label>
+    <button id="askBtn">Ask</button>
+    <div id="askError" class="error" role="alert" hidden></div>
+  </section>
+
+  <section class="panel output">
+    <div class="tabs" role="tablist">
+      <button role="tab" id="tab-result" aria-selected="true">This meeting</button>
+      <button role="tab" id="tab-history" aria-selected="false">Decision history</button>
+      <button role="tab" id="tab-tracker" aria-selected="false">Action Tracker</button>
+      <button role="tab" id="tab-ask" aria-selected="false">Ask Meetings</button>
+    </div>
+    <div id="result" role="tabpanel"></div>
+    <div id="history" role="tabpanel" hidden></div>
+    <div id="tracker" role="tabpanel" hidden></div>
+    <div id="askPanel" role="tabpanel" hidden></div>
+  </section>
+</main>
+
+<script src="app.js"></script>
+</body>
+</html>
